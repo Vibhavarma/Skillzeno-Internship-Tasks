@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Task 4 - Business Analytics Report</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.header {
+    background: #1f2937;
+    color: white;
+    padding: 28px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 8px 0;
+}
+
+.header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 25px auto;
+}
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.kpi-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.kpi-value {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.section {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+    margin-top: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.insight {
+    padding: 13px;
+    margin: 9px 0;
+    background: #f7f7f7;
+    border-left: 4px solid #444;
+    border-radius: 5px;
+}
+
+.recommendation {
+    padding: 14px;
+    margin: 10px 0;
+    background: #f7f7f7;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+.chart {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.bar-label {
+    width: 140px;
+    font-size: 14px;
+}
+
+.bar-container {
+    flex: 1;
+    background: #e5e7eb;
+    height: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: #374151;
+}
+
+.bar-value {
+    width: 110px;
+    text-align: right;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+}
+
+@media (max-width: 800px) {
+    .kpis {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>Business Analytics Report</h1>
+
+<p>Supermart Grocery Sales Analysis | Skillzeno Internship - Task 4</p>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="kpis">
+
+<div class="card">
+<div class="kpi-title">Total Sales</div>
+<div class="kpi-value">₹14,956,982.00</div>
+</div>
+
+<div class="card">
+<div class="kpi-title">Total Profit</div>
+<div class="kpi-value">₹3,747,121.20</div>
+</div>
+
+<div class="card">
+<div class="kpi-title">Total Orders</div>
+<div class="kpi-value">9,994</div>
+</div>
+
+<div class="card">
+<div class="kpi-title">Profit Margin</div>
+<div class="kpi-value">25.05%</div>
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>1. Business Problem</h2>
+
+<p>
+The objective of this analysis is to understand supermarket sales and
+profitability performance across product categories, regions and cities.
+The analysis aims to identify important business patterns and provide
+data-backed recommendations that can support better sales and business
+decisions.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="section">
+
+<h2>2. Category Performance</h2>
+
+<p><b>Top Sales Category:</b> Eggs, Meat & Fish</p>
+
+<p><b>Highest Profit Category:</b> Snacks</p>
+
+<p><b>Lowest Sales Category:</b> Oil & Masala</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>3. Regional Performance</h2>
+
+<p><b>Top Region by Sales:</b> West</p>
+
+<p><b>Highest Regional Sales:</b> ₹4,798,743.00</p>
+
+<p><b>Lowest Sales Region:</b> North</p>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>4. Sales by Category</h2>
+
+<div class="chart">
+
+
+    <div class="bar-row">
+        <div class="bar-label">Oil & Masala</div>
+        <div class="bar-container">
+            <div class="bar" style="width:89.90%"></div>
+        </div>
+        <div class="bar-value">₹2,038,442.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Beverages</div>
+        <div class="bar-container">
+            <div class="bar" style="width:91.97%"></div>
+        </div>
+        <div class="bar-value">₹2,085,313.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Food Grains</div>
+        <div class="bar-container">
+            <div class="bar" style="width:93.29%"></div>
+        </div>
+        <div class="bar-value">₹2,115,272.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Fruits & Veggies</div>
+        <div class="bar-container">
+            <div class="bar" style="width:92.65%"></div>
+        </div>
+        <div class="bar-value">₹2,100,727.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Bakery</div>
+        <div class="bar-container">
+            <div class="bar" style="width:93.16%"></div>
+        </div>
+        <div class="bar-value">₹2,112,281.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Snacks</div>
+        <div class="bar-container">
+            <div class="bar" style="width:98.68%"></div>
+        </div>
+        <div class="bar-value">₹2,237,546.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Eggs, Meat & Fish</div>
+        <div class="bar-container">
+            <div class="bar" style="width:100.00%"></div>
+        </div>
+        <div class="bar-value">₹2,267,401.00</div>
+    </div>
+    
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>5. Profit by Category</h2>
+
+<table>
+
+<tr>
+<th>Category</th>
+<th>Sales</th>
+<th>Profit</th>
+</tr>
+
+
+    <tr>
+        <td>Oil & Masala</td>
+        <td>₹2,038,442.00</td>
+        <td>₹497,895.29</td>
+    </tr>
+    
+    <tr>
+        <td>Beverages</td>
+        <td>₹2,085,313.00</td>
+        <td>₹525,605.76</td>
+    </tr>
+    
+    <tr>
+        <td>Food Grains</td>
+        <td>₹2,115,272.00</td>
+        <td>₹529,162.64</td>
+    </tr>
+    
+    <tr>
+        <td>Fruits & Veggies</td>
+        <td>₹2,100,727.00</td>
+        <td>₹530,400.38</td>
+    </tr>
+    
+    <tr>
+        <td>Bakery</td>
+        <td>₹2,112,281.00</td>
+        <td>₹528,521.06</td>
+    </tr>
+    
+    <tr>
+        <td>Snacks</td>
+        <td>₹2,237,546.00</td>
+        <td>₹568,178.85</td>
+    </tr>
+    
+    <tr>
+        <td>Eggs, Meat & Fish</td>
+        <td>₹2,267,401.00</td>
+        <td>₹567,357.22</td>
+    </tr>
+    
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h2>6. Sales by Region</h2>
+
+<div class="chart">
+
+
+    <div class="bar-row">
+        <div class="bar-label">North</div>
+        <div class="bar-container">
+            <div class="bar" style="width:0.03%"></div>
+        </div>
+        <div class="bar-value">₹1,254.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">South</div>
+        <div class="bar-container">
+            <div class="bar" style="width:50.86%"></div>
+        </div>
+        <div class="bar-value">₹2,440,461.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">West</div>
+        <div class="bar-container">
+            <div class="bar" style="width:100.00%"></div>
+        </div>
+        <div class="bar-value">₹4,798,743.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">Central</div>
+        <div class="bar-container">
+            <div class="bar" style="width:72.27%"></div>
+        </div>
+        <div class="bar-value">₹3,468,156.00</div>
+    </div>
+    
+    <div class="bar-row">
+        <div class="bar-label">East</div>
+        <div class="bar-container">
+            <div class="bar" style="width:88.53%"></div>
+        </div>
+        <div class="bar-value">₹4,248,368.00</div>
+    </div>
+    
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>7. Top Cities by Sales</h2>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>City</th>
+<th>Sales</th>
+</tr>
+
+
+    <tr>
+        <td>1</td>
+        <td>Kanyakumari</td>
+        <td>₹706,764.00</td>
+    </tr>
+    
+    <tr>
+        <td>2</td>
+        <td>Vellore</td>
+        <td>₹676,550.00</td>
+    </tr>
+    
+    <tr>
+        <td>3</td>
+        <td>Bodi</td>
+        <td>₹667,177.00</td>
+    </tr>
+    
+    <tr>
+        <td>4</td>
+        <td>Tirunelveli</td>
+        <td>₹659,812.00</td>
+    </tr>
+    
+    <tr>
+        <td>5</td>
+        <td>Perambalur</td>
+        <td>₹659,738.00</td>
+    </tr>
+    
+    <tr>
+        <td>6</td>
+        <td>Salem</td>
+        <td>₹657,093.00</td>
+    </tr>
+    
+    <tr>
+        <td>7</td>
+        <td>Pudukottai</td>
+        <td>₹653,179.00</td>
+    </tr>
+    
+    <tr>
+        <td>8</td>
+        <td>Tenkasi</td>
+        <td>₹643,652.00</td>
+    </tr>
+    
+    <tr>
+        <td>9</td>
+        <td>Karur</td>
+        <td>₹642,273.00</td>
+    </tr>
+    
+    <tr>
+        <td>10</td>
+        <td>Krishnagiri</td>
+        <td>₹637,273.00</td>
+    </tr>
+    
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h2>8. Key Business Insights</h2>
+
+<div class="insight">
+The overall business generated <b>₹14,956,982.00</b>
+in sales with total profit of <b>₹3,747,121.20</b>.
+</div>
+
+<div class="insight">
+The <b>Eggs, Meat & Fish</b> category generated the highest sales
+among the analyzed categories.
+</div>
+
+<div class="insight">
+The <b>West</b> region recorded the highest sales
+among the analyzed regions.
+</div>
+
+<div class="insight">
+The city with the highest sales was <b>Kanyakumari</b>,
+with sales of <b>₹706,764.00</b>.
+</div>
+
+<div class="insight">
+The overall profit margin was approximately
+<b>25.05%</b>.
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>9. Data-Backed Recommendations</h2>
+
+
+    <div class="recommendation">
+        • Focus on the Eggs, Meat & Fish category because it generates the highest sales among the analyzed categories.
+    </div>
+    
+    <div class="recommendation">
+        • Continue strengthening sales performance in the West region, which records the highest regional sales.
+    </div>
+    
+    <div class="recommendation">
+        • Review the performance of the Oil & Masala category to identify opportunities for pricing, promotion or product-mix improvement.
+    </div>
+    
+    <div class="recommendation">
+        • Use the performance of Kanyakumari as a reference when planning sales strategies for other cities.
+    </div>
+    
+    <div class="recommendation">
+        • Monitor profitability along with sales so that growth decisions consider both revenue and profit.
+    </div>
+    
+
+</div>
+
+
+<div class="section">
+
+<h2>10. Conclusion</h2>
+
+<p>
+The analysis provides a structured view of supermarket sales and
+profitability performance. By examining categories, regions and cities,
+the business can identify areas of strong performance and areas that
+require further attention. The findings can support decisions related
+to product focus, regional strategy, promotions and performance
+monitoring.
+</p>
+
+</div>
+
+
+<div class="footer">
+
+<p>Created for Skillzeno Internship – Task 4</p>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>
